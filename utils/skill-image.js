@@ -61,7 +61,6 @@ import ruby from '../app/assets/svg/skills/ruby.svg';
 import selenium from '../app/assets/svg/skills/selenium.svg';
 import sketch from '../app/assets/svg/skills/sketch.svg';
 import strapi from '../app/assets/svg/skills/strapi.svg';
-import svelte from '../app/assets/svg/skills/svelte.svg';
 import swift from '../app/assets/svg/skills/swift.svg';
 import tailwind from '../app/assets/svg/skills/tailwind.svg';
 import tensorflow from '../app/assets/svg/skills/tensorflow.svg';
@@ -114,8 +113,6 @@ export const skillsImage = (skill) => {
       return nuxtJS;
     case 'react':
       return react;
-    case 'svelte':
-      return svelte;
     case 'typescript':
       return typescript;
     case 'vue':
@@ -257,4 +254,12 @@ export const skillsImage = (skill) => {
     default:
       break;
   }
-}
+};
+
+export const skillImage = (skill) => {
+  console.log("LOOKUP:", skill);
+  console.log("AVAILABLE ICON KEYS:", Object.keys(skillsIcons));
+
+  return skillsIcons[skill] ?? null;
+};
+
