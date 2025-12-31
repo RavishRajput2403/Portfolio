@@ -1,4 +1,6 @@
 {
+  "packageManager": "npm@10.5.0",
+
   "name": "developer-portfolio",
   "description": "Portfolio of Ravish Kumar",
   "version": "0.1.0",
