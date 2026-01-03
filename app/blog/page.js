@@ -1,16 +1,21 @@
 import { personalData } from "@/utils/data/personal-data";
 import BlogCard from "../components/homepage/blog/blog-card";
 
+export const dynamic = "force-dynamic";
+
 async function getBlogs() {
-  const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
+  const res = await fetch(
+    `https://dev.to/api/articles?username=${personalData.devUsername}&per_page=100`,
+    { cache: "no-store" }
+  );
 
   if (!res.ok) {
-    throw new Error('Failed to fetch data')
+    throw new Error("Failed to fetch data");
   }
 
-  const data = await res.json();
-  return data;
-};
+  return res.json();
+}
+
 
 async function page() {
   const blogs = await getBlogs();

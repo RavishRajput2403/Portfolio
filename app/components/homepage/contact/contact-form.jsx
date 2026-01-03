@@ -30,12 +30,13 @@ function ContactForm() {
       return;
     } else {
       setError({ ...error, required: false });
-    };
+    }
 
     try {
       setIsLoading(true);
+
       const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_APP_URL}/api/contact`,
+        "/api/contact",   // ✅ FIX: relative path
         userInput
       );
 
@@ -45,11 +46,13 @@ function ContactForm() {
         email: "",
         message: "",
       });
-    } catch (error) {
-      toast.error(error?.response?.data?.message);
+    } catch (err) {
+      toast.error(
+        err?.response?.data?.message || "Failed to send message"
+      );
     } finally {
       setIsLoading(false);
-    };
+    }
   };
 
   return (
@@ -113,11 +116,11 @@ function ContactForm() {
             >
               {
                 isLoading ?
-                <span>Sending Message...</span>:
-                <span className="flex items-center gap-1">
-                  Send Message
-                  <TbMailForward size={20} />
-                </span>
+                  <span>Sending Message...</span> :
+                  <span className="flex items-center gap-1">
+                    Send Message
+                    <TbMailForward size={20} />
+                  </span>
               }
             </button>
           </div>
