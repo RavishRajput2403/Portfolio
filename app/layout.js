@@ -10,9 +10,20 @@ import "./css/globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Portfolio of Ravish Kumar - Software Developer",
+  title: "Ravish Kumar | Software Developer",
   description:
-    "This is the portfolio of Ravish Kumar. I am a full stack developer and a self taught developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.",
+    "Ravish Kumar is a software developer skilled in React, Next.js, Node.js, and MongoDB. Explore projects, blogs, and contact details.",
+  keywords: [
+    "Ravish Kumar",
+    "Software Developer",
+    "Full Stack Developer",
+    "React Developer",
+    "Next.js Developer",
+    "Portfolio",
+  ],
+  authors: [{ name: "Ravish Kumar" }],
+  creator: "Ravish Kumar",
+  metadataBase: new URL("https://ravishkumar-portfolio.vercel.app"),
 };
 
 export default function RootLayout({ children }) {
