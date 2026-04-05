@@ -1,9 +1,9 @@
 export const experiences = [
   {
     id: 1,
-    title: 'Fresher',
-    company: "Actively seeking opportunities",
-    duration: ""
+    title: 'Associate Solution Engineer',
+    company: "FarEye Technology Pvt Ltd.",
+    duration: "April 2026 - Present"
   },
   // {
   //   id: 2,
